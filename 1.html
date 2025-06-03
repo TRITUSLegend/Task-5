@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+  const anon = function(x) { return x + 2; };
+  console.log("Anonymous function:", anon(3));
+
+  const arrow = x => x * 3;
+  console.log("Arrow function:", arrow(4));
+
+  function named() {
+    console.log("Named function says hello!");
+  }
+  named();
+
+  function callbackDemo(cb) {
+    cb("Callback called");
+  }
+  callbackDemo(msg => console.log(msg));
+
+  function hof(fn) {
+    return fn(10);
+  }
+  console.log("Higher order function:", hof(x => x + 5));
+
+  (function() {
+    console.log("IIFE executed");
+  })();
+
+  function total() {
+    let sum = 0;
+    for (let val of arguments) sum += val;
+    console.log("Function with arguments:", sum);
+  }
+  total(1, 2, 3, 4);
+
+  function multiply(a, b) {
+    return a * b;
+  }
+  console.log("Return value:", multiply(2, 5));
+</script>
+</body>
+</html>
